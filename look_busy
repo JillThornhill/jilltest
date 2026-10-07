@@ -1,0 +1,8 @@
+#!/bin/bash
+date
+for i in {1..100}; do
+   SUFFIX=$i.$(date +%Y%m%d%H%M%S%N)
+   echo Its now $SUFFIX
+   sleep 2 
+done
+date
