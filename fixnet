@@ -1,1 +1,2 @@
-sc del dev eth0 root
+tc qdisc del dev eth0 root
+echo Fixed network issues
