@@ -24,10 +24,16 @@ public class BuggyProg21 {
         } catch (IOException e) {
             e.printStackTrace();
         }
+     // sleep for long enough for diagnostics to be started
+
+        try {
+            Thread.sleep(5*60*1000);
+            }
+        catch(Exception e) {}
      // Create a thread that reads the file
      // Repeat as per command line argument 
         for(int i=0;i<numFiles;i++) {
-           try{Thread.sleep(20);} catch(Exception e) {}
+           try{Thread.sleep(10);} catch(Exception e) {}
            System.out.println("Thread: "+i);
            new Thread(() -> {
             readFile();  
@@ -39,7 +45,6 @@ public class BuggyProg21 {
 // ==========================================
 public static void readFile() {
         // Open the file and read from it
-            System.out.println("Opening file");
 	    try {
                 BufferedReader reader =
                      new BufferedReader(new FileReader("hello.txt")) ;
